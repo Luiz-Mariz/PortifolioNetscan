@@ -1,0 +1,407 @@
+/* Cores da Netscan */
+:root{
+    --net-blue: #004AAD; /* Azul Principal */
+    --net-blue-dark: #003380; /* Azul Escuro para contraste */
+    --net-dark: #1A1A1A; /* Preto/Texto Escuro */
+    --net-white: #FFFFFF;
+    --net-bg-light: #F0F5F9; /* Fundo Secundário mais colorido */
+    --maxw: 1200px;
+}
+
+/* Estilos Globais e Reset */
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* Usando a fonte Roboto para um visual limpo e profissional */
+    font-family: 'Roboto', sans-serif; 
+    color: var(--net-dark);
+    background-color: var(--net-white);
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    font-size: 16px; /* Tamanho base um pouco menor */
+}
+.container{
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 0 25px;
+}
+
+/* Títulos e Subtítulos */
+.section-heading{
+    font-size: 2.2rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+    color: var(--net-blue-dark);
+    text-align: center;
+}
+.section-subheading{
+    font-size: 1.0rem;
+    font-weight: 400;
+    color: var(--net-dark);
+    text-align: center;
+    margin-bottom: 50px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.btn-primary{
+    display: inline-block;
+    background-color: var(--net-blue);
+    color: var(--net-white);
+    padding: 14px 30px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.0rem;
+    transition: background-color 0.3s, transform 0.2s;
+    box-shadow: 0 4px 10px rgba(0, 74, 173, 0.3);
+}
+.btn-primary:hover{
+    background-color: var(--net-blue-dark);
+    transform: translateY(-2px);
+}
+
+/* 1. HERO Section */
+.hero-section{
+    padding: 100px 0 80px;
+    background-color: var(--net-bg-light); 
+    text-align: center;
+    border-bottom: 5px solid var(--net-blue);
+}
+.hero-section h1{
+    font-size: 3.0rem;
+    font-weight: 900; 
+    color: var(--net-blue-dark);
+    line-height: 1.1;
+    margin-bottom: 15px;
+}
+.hero-section p{
+    font-size: 1.2rem;
+    font-weight: 300; 
+    color: var(--net-dark);
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* 2. Destaque de Produtos (Cards) */
+.products-section{
+    padding: 80px 0;
+    background-color: var(--net-white);
+}
+.cards-wrapper{
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.product-card{
+    width: 320px;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+    background-color: var(--net-bg-light);
+    border-bottom: 4px solid var(--net-blue);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+.product-card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 74, 173, 0.15);
+}
+.product-card .icon{
+    font-size: 3.5rem;
+    color: var(--net-blue);
+    margin-bottom: 10px;
+}
+.product-card h4{
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: var(--net-dark);
+}
+.product-card p{
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* 3. Seção com Fotos e Texto (Layout mais dinâmico) */
+.photo-text-section {
+    padding: 70px 0;
+    background-color: var(--net-blue);
+    color: var(--net-white);
+}
+.content-block {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+.content-block:nth-child(even) {
+    flex-direction: row-reverse;
+}
+.text-content {
+    flex: 1;
+    padding: 15px 0;
+}
+.text-content h3 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--net-white);
+}
+.text-content p {
+    font-size: 1.0rem;
+    font-weight: 300;
+    margin-bottom: 15px;
+}
+.image-placeholder {
+    width: 50%;
+    /* MANTÉM A ALTURA FIXA PARA TODAS AS ÁREAS DE IMAGEM */
+    height: 350px; 
+    
+    background-color: #A0C0E0; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-align: center;
+    padding: 0; 
+}
+.image-placeholder img {
+    /* Garante que a imagem preencha o container */
+    width: 100%;
+    height: 100%;
+    
+    /* Esta é a PROPRIEDADE CHAVE para padronizar o visual:
+       - 'cover' corta a imagem, mas garante que a área 350px seja coberta.
+       - Se você preferir que a imagem inteira seja vista (e aceite barras brancas), use 'contain'.
+    */
+    object-fit: cover; 
+    display: block;
+}
+
+/* Responsividade - Ajustes para telas menores */
+@media (max-width: 900px){
+    /* ... (outros estilos que você já tinha) ... */
+    
+    .content-block, .content-block:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+    }
+    .image-placeholder {
+        width: 100%;
+        /* AJUSTA A ALTURA NO MOBILE (PARA NÃO FICAR MUITO GRANDE) */
+        min-height: 250px;
+        height: 250px; 
+    }
+    /* ... (outros estilos que você já tinha) ... */
+}
+
+/* --- ESTILOS PARA A GRADE DE CARDS ESTÁTICOS (3 COLUNAS) --- */
+
+.cards-grid-wrapper {
+    /* Define 3 colunas para telas maiores */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* AUMENTADO: Mais espaço entre os cartões */
+    gap: 40px; 
+    max-width: var(--maxw);
+    margin: 40px auto 0;
+    padding: 0 15px;
+}
+
+.service-card-static {
+    /* MANTIDO: O padding interno é o "espaçamento" do card */
+    padding: 22px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    background-color: var(--net-bg-light);
+    border-top: 3px solid var(--net-blue);
+    transition: box-shadow 0.3s, transform 0.3s;
+    text-align: left;
+}
+
+.service-card-static:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 74, 173, 0.1);
+}
+
+.service-card-static .icon {
+    /* REDUZIDO: Ícone menor */
+    font-size: 2.0rem; 
+    color: var(--net-blue);
+    margin-bottom: 8px; /* Espaço após o ícone */
+    line-height: 1; 
+}
+
+.service-card-static h4 {
+    /* REDUZIDO: Título menor */
+    font-size: 1.1rem; 
+    font-weight: 700;
+    margin-bottom: 6px; /* Espaço após o título */
+    color: var(--net-blue-dark);
+}
+
+.service-card-static p {
+    /* REDUZIDO: Parágrafo menor */
+    font-size: 0.85rem; 
+    /* MANTIDO: Altura da linha um pouco maior para espaçar o texto (se estiver em estilos globais) */
+    line-height: 1.4; 
+    color: #444;
+}
+
+
+/* --- Responsividade para a Grade de Cards (3 Colunas) --- */
+
+@media (max-width: 1024px){
+    /* Se a tela for média, mude para 2 colunas */
+    .cards-grid-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px; /* Reduz o espaçamento entre os cards em 2 colunas */
+    }
+}
+
+@media (max-width: 768px) {
+    /* Se a tela for pequena, volte para 1 coluna */
+    .cards-grid-wrapper {
+        grid-template-columns: 1fr;
+        gap: 20px; /* Espaçamento em 1 coluna */
+    }
+    .service-card-static {
+        padding: 18px; /* Reduz o padding interno no mobile */
+    }
+}
+/* Removidos estilos de .accordion-wrapper, .service-item-header, .service-item.open, .service-description, etc. */
+
+
+/* 5. FOOTER (CONTATO E RT) */
+footer.contact-footer{
+    background: var(--net-dark);
+    color: var(--net-white);
+    padding: 50px 0;
+    text-align: center;
+}
+.contact-info strong {
+    color: var(--net-blue);
+    margin-bottom: 3px;
+}
+.contact-info .main-contact {
+    font-size: 1.8rem;
+    margin: 8px 0 15px;
+    color: var(--net-white);
+}
+.contact-info a {
+    color: var(--net-white);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+.contact-info a:hover {
+    color: var(--net-blue);
+}
+.copyright {
+    margin-top: 25px;
+    font-size: 0.8rem;
+}
+
+/* --- ESTILOS ADICIONAIS PARA O FOOTER (RT) --- */
+
+.rt-profile {
+    margin-bottom: 30px;
+    padding: 0 10%;
+}
+
+.rt-profile strong {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    display: block;
+    color: var(--net-blue);
+}
+
+.rt-description {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: #CCC; 
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+.btn-secondary {
+    display: inline-block;
+    color: var(--net-blue);
+    background-color: var(--net-white);
+    padding: 8px 15px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: #DDD;
+    color: var(--net-blue-dark);
+}
+
+/* Responsividade - Ajustes para telas menores */
+@media (max-width: 1024px){
+    /* REMOVIDO: .accordion-wrapper */
+}
+
+@media (max-width: 900px){
+    .hero-section h1{
+        font-size: 2.5rem;
+    }
+    .content-block, .content-block:nth-child(even) {
+        flex-direction: column;
+        text-align: center;
+    }
+    .image-placeholder {
+        width: 100%;
+        min-height: 250px;
+    }
+    .section-heading{
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    /* AJUSTE: A seção de serviços agora usa 1 coluna em telas pequenas */
+    .services-list-grid {
+        grid-template-columns: 1fr;
+        gap: 10px 0;
+        max-width: 500px;
+    }
+    
+    .service-item {
+        font-size: 1.0rem;
+        border-bottom: 1px solid var(--net-bg-light); /* Adiciona a borda em todos */
+    }
+    
+    /* Garante que o último item da coluna única não tenha borda */
+    .services-list-grid > div:last-child {
+        border-bottom: none;
+    }
+    
+    /* REMOVIDO: O bloco .accordion-wrapper e estilos de acordeão */
+}
+
+@media (max-width: 500px) {
+    .hero-section h1{
+        font-size: 1.8rem;
+    }
+    .hero-section p {
+        font-size: 1.0rem;
+    }
+    .btn-primary {
+        padding: 12px 25px;
+        font-size: 0.95rem;
+    }
+}
